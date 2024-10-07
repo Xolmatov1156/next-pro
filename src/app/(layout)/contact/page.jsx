@@ -6,8 +6,7 @@ import Logo from '../../../assets/small-logo.svg'
 
 const Contact = () => {
   return (
-    <div className='relative flex justify-center items-center h-[316px]'>
-      <Image src={Bg} alt='bg' className='w-screen absolute h-[316px]'/>
+    <div className='relative flex justify-center items-center h-[316px] back'>
       <div>
         <Image src={Logo}  className='mx-auto' alt='logo'/>
       <h2><strong className='text-[48px] text-black'>Contact</strong></h2>

@@ -1,5 +1,6 @@
-"use client"; // Add this at the top
+"use client";
 
+import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 
 async function getProducts() {
@@ -9,8 +10,9 @@ async function getProducts() {
 }
 
 export default function Home() {
+  const router = useRouter()
   const [products, setProducts] = useState([]);
-  const [visibleProducts, setVisibleProducts] = useState(8); // Initially show 8 products
+  const [visibleProducts, setVisibleProducts] = useState(8);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,7 +24,7 @@ export default function Home() {
   }, []);
 
   const showMoreProducts = () => {
-    setVisibleProducts((prevVisible) => prevVisible + 8); // Load 8 more products when clicked
+    setVisibleProducts((prevVisible) => prevVisible + 8);
   };
 
   return (
@@ -55,7 +57,7 @@ export default function Home() {
         <p className="text-center text-[32px] font-semibold">Our Products</p>
         <div className="grid grid-cols-4 gap-[30px] mt-[20px]">
           {products.slice(0, visibleProducts).map((product) => (
-            <div key={product.id} className="shadow-md hover:scale-105 w-[285px] h-[446px] duration-300 cursor-pointer p-4 shadow-black rounded-lg">
+            <div key={product.id} onClick={() => router.push(`./${product.id}`)} className="shadow-md hover:scale-105 w-[285px] h-[446px] duration-300 cursor-pointer p-4 shadow-black rounded-lg">
               <img src={product.thumbnail} alt={product.title} className="w-[285px] h-[300px] object-contain" />
               <h3 className="text-xl font-semibold mt-[15px]">{product.brand}</h3>
               <h3 className="text-[18px] font-semibold mt-[10px] line-clamp-1">{product.title}</h3>

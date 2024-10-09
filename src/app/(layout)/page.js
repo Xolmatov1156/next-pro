@@ -58,8 +58,8 @@ export default function Home() {
             <div key={product.id} className="shadow-md hover:scale-105 w-[285px] h-[446px] duration-300 cursor-pointer p-4 shadow-black rounded-lg">
               <img src={product.thumbnail} alt={product.title} className="w-[285px] h-[300px] object-contain" />
               <h3 className="text-xl font-semibold mt-[15px]">{product.brand}</h3>
-              <h3 className="text-xl font-semibold mt-[10px] line-clamp-1">{product.title}</h3>
-              <p className="text-xl font-semibold mt-[5px]">{product.price}$</p>
+              <h3 className="text-[18px] font-semibold mt-[10px] line-clamp-1">{product.title}</h3>
+              <p className="text-[16px] font-semibold mt-[5px] text-gray-600">{product.price}$</p>
             </div>
           ))}
         </div>

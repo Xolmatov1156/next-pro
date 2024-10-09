@@ -23,7 +23,7 @@ function About({ params }) {
             height={500}
             src={singleData?.images?.[0] || '/placeholder.jpg'}
             alt={singleData?.title}
-            className="object-cover w-full h-full"
+            className="object-contain w-[300px] h-[300px]"
           />
         </div>
 

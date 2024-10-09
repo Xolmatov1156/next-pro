@@ -27,9 +27,21 @@ export default async function Home() {
         <p className="text-center text-[20px] text-[#666666]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <div className="grid grid-cols-3 gap-8 mt-[20px]">
           {products.splice(0,3).map((product) => (
-            <div key={product.id} className="border p-4 border-black rounded-lg">
+            <div key={product.id} className="shadow-md cursor-pointer hover:scale-105 duration-300 shadow-black p-4 rounded-lg">
               <img src={product.thumbnail} alt={product.title} className="w-[381px] h-[480px] object-contain" />
               <h3 className="text-xl font-semibold mt-[30px] text-center">{product.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="w-[1183px] h-[685px] mx-auto my-[56px]">
+        <p className="text-center text-[32px] font-semibold">Our Products</p>
+        <div className="grid grid-cols-3 gap-8 mt-[20px]">
+          {products.map((product) => (
+            <div key={product.id} className="shadow-md hover:scale-105 duration-300 cursor-pointer p-4 shadow-black rounded-lg">
+              <img src={product.thumbnail} alt={product.title} className="w-[381px] h-[480px] object-contain" />
+              <h3 className="text-xl font-semibold mt-[30px] text-center">{product.title}</h3>
+              <p className="text-xl font-semibold mt-[10px] text-center">{product.price}$</p>
             </div>
           ))}
         </div>
